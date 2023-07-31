@@ -15,7 +15,6 @@ async function getPost(id: number) {
 }
 
 export default async function handler(request: NextRequest) {
-  console.log("USER ROUTER RESPONSE: useRouter", useRouter());
   console.log("REQUEST LOGS ARE REQUEST test 01", request);
   console.log("REQUEST LOGS ARE REQUEST nextUrl", request.nextUrl);
 
