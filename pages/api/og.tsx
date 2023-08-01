@@ -26,12 +26,6 @@ export default async function handler(request: NextRequest) {
 
   console.log("POST RESPONES IS: ", postResponse);
 
-  // if (!username) {
-  //   return new ImageResponse(<>Visit with &quot;?username=vercel&quot;</>, {
-  //     width: 1200,
-  //     height: 630,
-  //   });
-  // }
 
   return new ImageResponse(
     (
@@ -52,12 +46,12 @@ export default async function handler(request: NextRequest) {
         <img
           width="256"
           height="256"
-          src={postResponse?.thumbnailUrl}
+          src={postResponse?.agent_picture || "https://cdn.getfize.io/Logo.png"}
           style={{
             borderRadius: 128,
           }}
         />
-        <p>{postResponse?.title}</p>
+        <p>{postResponse?.agent_name || ""}</p>
       </div>
     ),
     {
