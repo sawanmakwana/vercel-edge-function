@@ -2,8 +2,6 @@ import React from "react";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest, } from "next/server";
 
-import { useRouter } from "next/router";
-
 export const config = {
   runtime: "edge",
 };
@@ -28,7 +26,7 @@ export default async function handler(request: NextRequest) {
 
   console.log("POST RESPONES IS: ",
    postResponse?.data, postResponse?.data?.agent_name, postResponse?.data?.agent_information?.agent_picture);
-   
+
 
 
   return new ImageResponse(
