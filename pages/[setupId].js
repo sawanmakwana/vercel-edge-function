@@ -20,7 +20,8 @@ export const getServerSideProps = async (context) => {
     props: {
       image: setupDetails?.data?.link_information?.link_display_picture || "demo",
       title: setupDetails?.data?.link_information?.link_display_name || "",
-      description: setupDetails?.data?.link_information?.link_display_description || ""
+      description: setupDetails?.data?.link_information?.link_display_description || "",
+      setupId: context.query?.setupId || "demo"
     },
   };
 };
@@ -38,7 +39,7 @@ const Home = props => {
         />
         <meta
           name="og:image"
-          content={`${props?.image}`}
+          content={`https://vercel-edge-function-eight.vercel.app/api/og/?id=${props?.setupId}`}
         />
         <meta name="twitter:image" content={`${props?.image}`} />
 
