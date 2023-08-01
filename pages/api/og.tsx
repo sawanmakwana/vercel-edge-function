@@ -27,7 +27,7 @@ export default async function handler(request: NextRequest) {
 
   const postResponse = await getPost(userId);
 
-  console.log("POST RESPONES IS: ", postResponse);
+  console.log("POST RESPONES IS: ", postResponse?.data);
 
 
   return new ImageResponse(
@@ -49,12 +49,12 @@ export default async function handler(request: NextRequest) {
         <img
           width="256"
           height="256"
-          src={postResponse?.data?.agent_picture}
+          src={postResponse?.data?.agent_picture || "https://cdn.getfize.io/Logo.png"}
           style={{
             borderRadius: 128,
           }}
         />
-        <p>{postResponse?.data?.agent_name}</p>
+        <p>{postResponse?.data?.agent_name || ""}</p>
       </div>
     ),
     {
