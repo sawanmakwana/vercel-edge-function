@@ -43,9 +43,9 @@ const Home = props => {
         />
         <meta
           property="og:image"
-          content={`https://vercel-edge-function-eight.vercel.app/api/og/?id=${props?.setupId}`}
+          content={`${props?.image}`}
         />
-        <meta property="twitter:image"  content={`https://vercel-edge-function-eight.vercel.app/api/og/?id=${props?.setupId}`} />
+        <meta property="twitter:image"  content={`${props?.setupId}`} />
         <meta
           property="twitter:description"
           content={`${props?.description}`}
