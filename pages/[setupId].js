@@ -10,7 +10,7 @@ export default function Home() {
 
   const router = useRouter();
 
-  return (
+  return router.isReady ? (
     <>
       <Head>
         <title>Preview Link App</title>
@@ -115,5 +115,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  ): <></>
 }
