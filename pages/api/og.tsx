@@ -25,7 +25,7 @@ export default async function handler(request: NextRequest) {
   const postResponse = await getPost(userId);
 
   console.log("POST RESPONES IS: ",
-   postResponse?.data, postResponse?.data?.agent_name, postResponse?.data?.agent_information?.agent_picture);
+   postResponse?.data, postResponse?.data?.agent_information?.agent_name, postResponse?.data?.agent_information?.agent_picture);
 
 
 
