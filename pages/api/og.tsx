@@ -7,7 +7,6 @@ export const config = {
 };
 
 async function getPost(id: any) {
-  console.log("id",id)
   let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}`
   const res = await fetch(setupUrl);
   let jsonResponse = await res.json();
@@ -20,10 +19,6 @@ export default async function handler(request: NextRequest) {
   const userId = searchParams.get("id");
 
   const postResponse = await getPost(userId);
-
-  console.log("POST RESPONES IS: ",
-    postResponse?.data?.agent_information?.agent_name,
-    postResponse?.data?.agent_information?.agent_picture);
 
   return new ImageResponse(
     (
