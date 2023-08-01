@@ -15,19 +15,15 @@ async function getPost(id: any) {
 }
 
 export default async function handler(request: NextRequest) {
-  console.log("REQUEST LOGS ARE REQUEST test 01", request);
-  console.log("REQUEST LOGS ARE REQUEST nextUrl", request.nextUrl);
 
   const { searchParams } = request.nextUrl;
-  console.log("request.nextUrl", request.nextUrl)
   const userId = searchParams.get("id");
 
   const postResponse = await getPost(userId);
 
   console.log("POST RESPONES IS: ",
-   postResponse?.data, postResponse?.data?.agent_information?.agent_name, postResponse?.data?.agent_information?.agent_picture);
-
-
+    postResponse?.data?.agent_information?.agent_name,
+    postResponse?.data?.agent_information?.agent_picture);
 
   return new ImageResponse(
     (
@@ -57,8 +53,8 @@ export default async function handler(request: NextRequest) {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: 650,
+      height: 300,
     }
   );
 }
