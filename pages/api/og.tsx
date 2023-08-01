@@ -42,8 +42,8 @@ export default async function handler(request: NextRequest) {
         }}
       >
         <img
-          width="256"
-          height="256"
+          width="100"
+          height="100"
           src={postResponse?.data?.agent_information?.agent_picture || "https://cdn.getfize.io/Logo.png"}
           style={{
             borderRadius: 128,
