@@ -8,8 +8,9 @@ export const config = {
   runtime: "edge",
 };
 
-async function getPost(id: number) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`);
+async function getPost(id: any) {
+  let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}`
+  const res = await fetch(setupUrl);
   let jsonResponse = await res.json();
   return jsonResponse;
 }
@@ -21,7 +22,7 @@ export default async function handler(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const userId = searchParams.get("id");
 
-  const postResponse = await getPost(Number(userId));
+  const postResponse = await getPost(userId);
 
   console.log("POST RESPONES IS: ", postResponse);
 
