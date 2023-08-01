@@ -45,7 +45,7 @@ const Home = props => {
           property="og:image"
           content={`${props?.image}`}
         />
-        <meta property="twitter:image"  content={`${props?.setupId}`} />
+        <meta property="twitter:image"  content={`${props?.image}`} />
         <meta
           property="twitter:description"
           content={`${props?.description}`}
