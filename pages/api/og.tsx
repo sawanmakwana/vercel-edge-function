@@ -23,6 +23,7 @@ export default async function handler(request: NextRequest) {
   console.log("REQUEST LOGS ARE REQUEST nextUrl", request.nextUrl);
 
   const { searchParams } = request.nextUrl;
+  console.log("request.nextUrl", request.nextUrl)
   const userId = searchParams.get("id");
 
   const postResponse = await getPost(userId);
