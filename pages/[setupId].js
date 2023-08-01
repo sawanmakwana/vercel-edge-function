@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const getServerSideProps = async (context) => {
 
    async function getPost(id) {
-    let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}`
+    let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}&agent_information=false&client_information=false`
     const res = await fetch(setupUrl);
     let jsonResponse = await res.json();
     return jsonResponse;
@@ -18,8 +18,9 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      image: setupDetails?.data?.agent_information?.agent_picture || "demo",
-      title: setupDetails?.data?.agent_information?.agent_name || ""
+      image: setupDetails?.data?.link_information?.link_display_picture || "demo",
+      title: setupDetails?.data?.link_information?.link_display_name || "",
+      description: setupDetails?.data?.link_information?.link_display_description || ""
     },
   };
 };
