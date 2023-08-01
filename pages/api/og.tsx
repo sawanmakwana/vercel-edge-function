@@ -14,8 +14,7 @@ async function getPost(id: any) {
   const res = await fetch(setupUrl);
   let jsonResponse = await res.json();
   console.log("jsonResponse", jsonResponse)
-  // return jsonResponse;
-  return {agent_picture: "", agent_name:""}
+  return jsonResponse;
 }
 
 export default async function handler(request: NextRequest) {
