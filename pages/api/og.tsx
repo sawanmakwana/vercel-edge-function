@@ -53,7 +53,7 @@ export default async function handler(request: NextRequest) {
             borderRadius: 128,
           }}
         />
-        <p>{postResponse?.data?.agent_name || ""}</p>
+        <p>{postResponse?.data?.agent_information?.agent_name || ""}</p>
       </div>
     ),
     {
