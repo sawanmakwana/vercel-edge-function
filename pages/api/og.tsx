@@ -13,7 +13,6 @@ async function getPost(id: any) {
   let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}`
   const res = await fetch(setupUrl);
   let jsonResponse = await res.json();
-  console.log("jsonResponse", jsonResponse)
   return jsonResponse;
 }
 
@@ -27,7 +26,7 @@ export default async function handler(request: NextRequest) {
 
   const postResponse = await getPost(userId);
 
-  console.log("POST RESPONES IS: ", postResponse?.data);
+  console.log("POST RESPONES IS: ", postResponse?.data, postResponse?.data?.agent_name, postResponse?.data?.agent_information?.agent_picture);
 
 
   return new ImageResponse(
@@ -49,7 +48,7 @@ export default async function handler(request: NextRequest) {
         <img
           width="256"
           height="256"
-          src={postResponse?.data?.agent_picture || "https://cdn.getfize.io/Logo.png"}
+          src={postResponse?.data?.agent_information?.agent_picture || "https://cdn.getfize.io/Logo.png"}
           style={{
             borderRadius: 128,
           }}
