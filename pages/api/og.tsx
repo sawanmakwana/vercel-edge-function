@@ -10,9 +10,10 @@ export const config = {
 
 async function getPost(id: any) {
   console.log("id",id)
-  // let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}`
-  // const res = await fetch(setupUrl);
-  // let jsonResponse = await res.json();
+  let setupUrl = `https://connect-dev.getfize.com/api/link/setup?setup_id=li_${id}`
+  const res = await fetch(setupUrl);
+  let jsonResponse = await res.json();
+  console.log("jsonResponse", jsonResponse)
   // return jsonResponse;
   return {agent_picture: "", agent_name:""}
 }
