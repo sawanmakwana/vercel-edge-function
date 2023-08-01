@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 export const getServerSideProps = async (context) => {
-
   return {
     props: {
       setupId: context.query?.setupId ?? "demo",
@@ -16,7 +15,6 @@ export const getServerSideProps = async (context) => {
 };
 
 const Home = props => {
-  console.log("props", props)
   return (
     <>
       <Head>
