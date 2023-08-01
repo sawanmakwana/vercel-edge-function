@@ -49,12 +49,12 @@ export default async function handler(request: NextRequest) {
         <img
           width="256"
           height="256"
-          src={postResponse?.agent_picture}
+          src={postResponse?.data?.agent_picture}
           style={{
             borderRadius: 128,
           }}
         />
-        <p>{postResponse?.agent_name}</p>
+        <p>{postResponse?.data?.agent_name}</p>
       </div>
     ),
     {
